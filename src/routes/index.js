@@ -42,7 +42,7 @@ const {isAuthenticated} = require("../middlewares/auth")
  * @swagger
  * /auth/register:
  *   post:
- *     summary: Si no tienes cuenta registrada, ¡Registrate! (Una vez registrado no es necesario iniciar sesion).
+ *     summary: Si no tienes cuenta registrada, ¡Registrate! (Una vez registrado no es necesario iniciar sesion, te llegara un mensaje de registro exitoso al correo).
  *     tags:
  *       - Registrate
  *     requestBody:

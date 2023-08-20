@@ -1,7 +1,6 @@
 const { Usuario } = require("../db")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
-
 const { createAccessToken } = require("../middlewares/jwt.js")
 
 const authLogin = async (req, res) => {
@@ -37,7 +36,8 @@ const authLogin = async (req, res) => {
 
                     const token = await createAccessToken({id : existingUser.id})
                     
-                    const login = res.status(200).send("Sesion Iniciada")
+                    res.cookie("token", token)
+                    res.status(200).send("Sesion Iniciada")
                 }
             }
         }
